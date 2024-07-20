@@ -40,6 +40,7 @@ To replicate this project, follow these steps:
 ## Dataset
 
 The dataset contains images annotated with bounding boxes for mirrors and sofas. It is divided into training, validation, and test sets to ensure comprehensive model evaluation.
+Dataset Roboflow: https://app.roboflow.com/prita-hamidanti-dpbne/dataset-uas/1
 
 ## Deployment
 medium: https://medium.com/@hamidantiprita/application-of-yolov5-algorithm-in-furniture-detection-e1b751170031 
