@@ -41,53 +41,6 @@ To replicate this project, follow these steps:
 
 The dataset contains images annotated with bounding boxes for mirrors and sofas. It is divided into training, validation, and test sets to ensure comprehensive model evaluation.
 
-## Model Training
-
-Train the YOLOv5 model using the following command:
-```bash
-python train.py --img 416 --batch 16 --epochs 10 --data {dataset.location}/data.yaml --weights yolov5s.pt --cache
-```
-
-This command trains the model with images resized to 416x416 pixels, a batch size of 16, and for 10 epochs. The weights are initialized from the pre-trained `yolov5s.pt` model.
-
-## Model Evaluation
-
-Evaluate the model using TensorBoard to visualize the metrics:
-```bash
-tensorboard --logdir runs
-```
-
-For detailed evaluation, inspect the model's predictions directly:
-```python
-import torch
-from utils.general import non_max_suppression
-
-# Load the model
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='runs/train/exp/weights/best.pt')
-
-# Perform inference
-results = model('/content/my-datasets/test/images')
-
-# Extract predictions
-predictions = results.pred[0]
-```
-
-## Inference
-
-Run inference on new images with the following command:
-```bash
-python detect.py --weights runs/train/exp/weights/best.pt --img 416 --conf 0.1 --source {dataset.location}/test/images
-```
-
-## Results
-
-The model detects mirrors and sofas in the test images, displaying bounding boxes and confidence scores. Example outputs include:
-```plaintext
-image 1/11: 2 mirrors, 218.6ms
-image 2/11: 3 mirrors, 2 sofas, 194.8ms
-...
-```
-
 ## Deployment
 medium: https://medium.com/@hamidantiprita/application-of-yolov5-algorithm-in-furniture-detection-e1b751170031 
 Dataset Roboflow: https://app.roboflow.com/prita-hamidanti-dpbne/dataset-uas/1 
