@@ -43,7 +43,6 @@ The dataset contains images annotated with bounding boxes for mirrors and sofas.
 
 ## Deployment
 medium: https://medium.com/@hamidantiprita/application-of-yolov5-algorithm-in-furniture-detection-e1b751170031 
-Dataset Roboflow: https://app.roboflow.com/prita-hamidanti-dpbne/dataset-uas/1 
 
 ## License
 
